@@ -49,32 +49,6 @@ Matrix mat_cin{arr_cin,3,4};
 
 bool equalto = false;
 
-TEST_CASE("check function"){
-    // std::vector<double> identity = {1, 0, 0, 0, 1, 0, 0, 0, 1};
-    // std::vector<double> arr = {3, 0, 0, 0, 3, 0, 0, 0, 3};
-
-    // Matrix a{identity,3,3};
-    // Matrix b{arr,3,3};
-
-    // a*=3; 
-    // CHECK(a==b);
-    // for(unsigned long i = 0 ; i < a.matrix.size();++i){
-    //     CHECK(a.matrix.at(i) == arr.at(i));
-    // }
-    // a*=3;
-    // b*=3;
-    // CHECK(a==b);
-    // for(unsigned long i = 0 ; i < a.matrix.size();++i){
-    //     CHECK(a.matrix.at(i) == 3*arr.at(i));
-    // } 
-
-    // a*=b;
-    // b*=9;
-    // CHECK(a==b);
-
-}
-
-
 TEST_CASE("function + binary matrix and matrix"){
 
     CHECK_EQ(mat2,mat1+mat3);
@@ -528,13 +502,6 @@ TEST_CASE("function -- after"){
     Matrix mat5_5{arr_e_1,4,3};
     Matrix mat6_6{arr_f_1,4,3};
     Matrix mat7_7{arr_h_1,4,3};
-    // cout << mat1 << endl;
-    // cout << mat2 << endl;
-    // cout << mat3 << endl;
-    // cout << mat4 << endl;
-    // cout << mat5 << endl;
-    // cout << mat6 << endl;
-    // cout << mat7 << endl;
 
     --mat_un_1;
     --mat1_1;
@@ -707,30 +674,6 @@ TEST_CASE("function * int and than matrix"){
     CHECK(5*mat5 == 4*mat6);
 
     CHECK_THROWS( equalto=(45*mat4 == mat5));
-}
-
-TEST_CASE("function *= int and than matrix"){
-    Matrix mat_un{arr1,3,3};
-    Matrix mat1{identity,3,3};
-    Matrix mat2{arr_b,3,3};
-    Matrix mat3{arr_c,3,3};
-    Matrix mat4{arr_d,3,3};
-    Matrix mat5{arr_e,4,3};
-    Matrix mat6{arr_f,4,3};
-    Matrix mat7{arr_h,4,3};
-    3*=mat1;
-    CHECK(mat1 == mat2);
-    mat1-=mat3;
-    4*=mat1;
-    CHECK(mat4 == mat1);
-    mat1-=mat2;
-    2*=mat1;
-    CHECK(mat3 == mat1);
-    9*=mat5;
-    4*=mat7;
-    CHECK(mat5 == mat7);
-    9*=mat4;
-    CHECK_THROWS( equalto=(mat4*5 == mat5*4)); 
 }
 
 TEST_CASE("function <<"){
