@@ -684,27 +684,27 @@ TEST_CASE("function <<"){
  
     ostringstream os1;
     os1 << mat1;
-    CHECK(os1.str() == "[ 1 0 0 ]\n[ 0 1 0 ]\n[ 0 0 1 ]");
+    CHECK(os1.str() == "[1 0 0]\n[0 1 0]\n[0 0 1]");
 
     ostringstream os2;
     os2 << mat2;
-    CHECK(os2.str() == "[ 3 0 0 ]\n[ 0 3 0 ]\n[ 0 0 3 ]");
+    CHECK(os2.str() == "[3 0 0]\n[0 3 0]\n[0 0 3]");
 
     ostringstream os3;
     os3 << mat3;
-    CHECK(os3.str() == "[ 2 0 0 ]\n[ 0 2 0 ]\n[ 0 0 2 ]");
+    CHECK(os3.str() == "[2 0 0]\n[0 2 0]\n[0 0 2]");
 
     ostringstream os4;
     os4 << mat4;
-    CHECK(os4.str() == "[ 4 0 0 ]\n[ 0 4 0 ]\n[ 0 0 4 ]");
+    CHECK(os4.str() == "[4 0 0]\n[0 4 0]\n[0 0 4]");
 
     ostringstream os5;
     os5 << mat_un;
-    CHECK(os5.str() == "[ -1 0 0 ]\n[ 0 -1 0 ]\n[ 0 0 -1 ]");
+    CHECK(os5.str() == "[-1 0 0]\n[0 -1 0]\n[0 0 -1]");
 
 }
 TEST_CASE("function >>"){
-    istringstream is{"[ 1 1 1 1 ], [ 1 1 1 1 ], [ 1 1 1 1 ]"};
+    istringstream is{"[1 1 1 1], [1 1 1 1], [1 1 1 1]"};
     is >> mat1;
     CHECK(mat1==mat_cin);
     istringstream is1{"[ 1 1 1 1 ],[ 1 1 1 1 ], [ 1 1 1 1 ]"};
@@ -723,7 +723,7 @@ TEST_CASE("function >>"){
     CHECK_THROWS(is7 >> mat1);
     istringstream is8{"     [ 1 1 1 1 ], [ 1 1 1 1 ], [ 1 1 1 1 ]"};
     CHECK_NOTHROW(is8 >> mat1);
-    istringstream is9{"     [ 1 1 1        1 ], [ 1 1 1 1 ], [ 1 1 1 1 ]"};
+    istringstream is9{"     [1 1 1        1], [1 1 1 1], [1 1 1 1]"};
     CHECK_NOTHROW(is9 >> mat1);
 }
 
