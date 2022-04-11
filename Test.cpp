@@ -9,7 +9,7 @@ using namespace std;
 using namespace zich;
 
 std::vector<double> arr1 = {-1, 0, 0, 0, -1, 0, 0, 0, -1};
-std::vector<double> identity = {1, 0, 0, 0, 1, 0, 0, 0, 1};
+std::vector<double> unit_matrix = {1, 0, 0, 0, 1, 0, 0, 0, 1};
 std::vector<double> arr_b = {3, 0, 0, 0, 3, 0, 0, 0, 3};
 std::vector<double> arr_c = {2, 0, 0, 0, 2, 0, 0, 0, 2};
 std::vector<double> arr_d= {4, 0, 0, 0, 4, 0, 0, 0, 4};
@@ -18,7 +18,7 @@ std::vector<double> arr_f= {5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0};
 std::vector<double> arr_h= {9, 0, 0, 0, 9, 0, 0, 0, 9, 0, 0, 0};
 
 std::vector<double> arr1_1 = {0, 1, 1, 1, 0, 1, 1, 1,0};
-std::vector<double> identity_1 = {2, 1, 1, 1, 2, 1, 1, 1, 2};
+std::vector<double> unit_matrix_1 = {2, 1, 1, 1, 2, 1, 1, 1, 2};
 std::vector<double> arr_b_1 = {4, 1, 1, 1, 4, 1, 1, 1, 4};
 std::vector<double> arr_c_1 = {3, 1, 1, 1, 3, 1, 1, 1, 3};
 std::vector<double> arr_d_1= {5, 1, 1, 1, 5, 1, 1, 1, 5};
@@ -27,7 +27,7 @@ std::vector<double> arr_f_1= {6, 1, 1, 1, 6, 1, 1, 1, 6, 1, 1, 1};
 std::vector<double> arr_h_1= {10, 1, 1,1, 10, 1, 1, 1, 10, 1, 1, 1};
 
 Matrix mat_un{arr1,3,3};
-Matrix mat1{identity,3,3};
+Matrix mat1{unit_matrix,3,3};
 Matrix mat2{arr_b,3,3};
 Matrix mat3{arr_c,3,3};
 Matrix mat4{arr_d,3,3};
@@ -36,7 +36,7 @@ Matrix mat6{arr_f,4,3};
 Matrix mat7{arr_h,4,3};
 
 Matrix mat_un_1{arr1_1,3,3};
-Matrix mat1_1{identity_1,3,3};
+Matrix mat1_1{unit_matrix_1,3,3};
 Matrix mat2_2{arr_b_1,3,3};
 Matrix mat3_3{arr_c_1,3,3};
 Matrix mat4_4{arr_d_1,3,3};
@@ -105,7 +105,7 @@ TEST_CASE("function - binary matrix and matrix"){
 }
 
 TEST_CASE("function -= binary matrix and matrix"){
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
@@ -137,12 +137,12 @@ TEST_CASE("function -= binary matrix and matrix"){
 }
 
 TEST_CASE("function - unary"){
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     CHECK_EQ(-mat1,mat_un);
 }
 
 TEST_CASE("function < binary"){
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
@@ -190,7 +190,7 @@ TEST_CASE("function < binary"){
 }
 
 TEST_CASE("function <= binary"){
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
@@ -239,7 +239,7 @@ TEST_CASE("function <= binary"){
 }
 
 TEST_CASE("function > binary"){
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
@@ -288,7 +288,7 @@ TEST_CASE("function > binary"){
 }
 
 TEST_CASE("function >= binary"){
-Matrix mat1{identity,3,3};
+Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
@@ -398,7 +398,7 @@ TEST_CASE("function != binary"){
 
 TEST_CASE("function ++ before"){
     Matrix mat_un{arr1,3,3};
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
@@ -429,7 +429,7 @@ TEST_CASE("function ++ before"){
 
 TEST_CASE("function ++ after"){
     Matrix mat_un{arr1,3,3};
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
@@ -458,7 +458,7 @@ TEST_CASE("function ++ after"){
 
 TEST_CASE("function -- before"){
     Matrix mat_un{arr1,3,3};
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
@@ -487,7 +487,7 @@ TEST_CASE("function -- before"){
 
 TEST_CASE("function -- after"){
     Matrix mat_un{arr1,3,3};
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
@@ -495,7 +495,7 @@ TEST_CASE("function -- after"){
     Matrix mat6{arr_f,4,3};
     Matrix mat7{arr_h,4,3};
     Matrix mat_un_1{arr1_1,3,3};
-    Matrix mat1_1{identity_1,3,3};
+    Matrix mat1_1{unit_matrix_1,3,3};
     Matrix mat2_2{arr_b_1,3,3};
     Matrix mat3_3{arr_c_1,3,3};
     Matrix mat4_4{arr_d_1,3,3};
@@ -524,7 +524,7 @@ TEST_CASE("function -- after"){
 
 TEST_CASE("function *= matrix and than int"){
     Matrix mat_un{arr1,3,3};
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
@@ -548,7 +548,7 @@ TEST_CASE("function *= matrix and than int"){
 
 TEST_CASE("function * matrix and than int"){
     Matrix mat_un{arr1,3,3};
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
@@ -571,7 +571,7 @@ TEST_CASE("function * matrix and than int"){
 
 TEST_CASE("function * matrix and matrix"){
     Matrix mat_un{arr1,3,3};
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
@@ -604,7 +604,7 @@ TEST_CASE("function * matrix and matrix"){
 
 TEST_CASE("function *= matrix and matrix"){
     Matrix mat_un{arr1,3,3};
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
@@ -612,7 +612,7 @@ TEST_CASE("function *= matrix and matrix"){
     Matrix mat6{arr_f,4,3};
     Matrix mat7{arr_h,4,3};
     Matrix mat_un_1{arr1_1,3,3};
-    Matrix mat1_1{identity_1,3,3};
+    Matrix mat1_1{unit_matrix_1,3,3};
     Matrix mat2_2{arr_b_1,3,3};
     Matrix mat3_3{arr_c_1,3,3};
     Matrix mat4_4{arr_d_1,3,3};
@@ -657,7 +657,7 @@ TEST_CASE("function *= matrix and matrix"){
 
 TEST_CASE("function * int and than matrix"){
     Matrix mat_un{arr1,3,3};
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
@@ -677,7 +677,7 @@ TEST_CASE("function * int and than matrix"){
 }
 
 TEST_CASE("function <<"){
-    Matrix mat1{identity,3,3};
+    Matrix mat1{unit_matrix,3,3};
     Matrix mat2{arr_b,3,3};
     Matrix mat3{arr_c,3,3};
     Matrix mat4{arr_d,3,3};
