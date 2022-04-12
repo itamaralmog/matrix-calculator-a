@@ -96,7 +96,6 @@ TEST_CASE("function - binary matrix and matrix"){
     CHECK_EQ(mat2-mat4,mat1-mat3);
     CHECK_EQ(mat4,mat1-mat3+mat2);
     CHECK_EQ(mat3,mat1-mat2+mat4);
-    CHECK_EQ(mat5-mat6,mat7-mat6);
     
     CHECK_THROWS(mat1-mat5);
     CHECK_THROWS(mat2-mat6);
@@ -719,35 +718,5 @@ TEST_CASE("function >>"){
     istringstream is7{"[1 1 1 1], [1 1 1 1], [1 1 1 1]\n"};
     CHECK_NOTHROW(is7 >> mat1);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
